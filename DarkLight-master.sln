@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkLight-master", "Assembly-CSharp.csproj", "{F126F9C8-627F-69F9-B796-9117723FA96A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkLight-master", "Assembly-CSharp-firstpass.csproj", "{C036E646-E8F2-1385-0805-EC956D4824CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkLight-master", "Assembly-CSharp-Editor.csproj", "{EABF25BE-DF51-89A8-0E32-B8ADDD7BA168}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F126F9C8-627F-69F9-B796-9117723FA96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F126F9C8-627F-69F9-B796-9117723FA96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F126F9C8-627F-69F9-B796-9117723FA96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F126F9C8-627F-69F9-B796-9117723FA96A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C036E646-E8F2-1385-0805-EC956D4824CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C036E646-E8F2-1385-0805-EC956D4824CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C036E646-E8F2-1385-0805-EC956D4824CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C036E646-E8F2-1385-0805-EC956D4824CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EABF25BE-DF51-89A8-0E32-B8ADDD7BA168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EABF25BE-DF51-89A8-0E32-B8ADDD7BA168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EABF25BE-DF51-89A8-0E32-B8ADDD7BA168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EABF25BE-DF51-89A8-0E32-B8ADDD7BA168}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
