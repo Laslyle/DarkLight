@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 3334622626
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2e43eeb1040355cc2b99922eaca24a53
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/RPG/Sounds/Sword Swing.mp3
+- Assets/RPG/Sounds/mage-expolsion.ogg
+- Assets/RPG/Sounds/Attack-Miss.wav
+- Assets/RPG/Sounds/weapon-swing.ogg
+- Assets/RPG/Sounds/slash-normal.ogg
+- Assets/RPG/Sounds/BGM-Ingame.mp3
+- Assets/RPG/Sounds/sfx_nextDialog.wav
+- Assets/RPG/Sounds/heal.ogg
+- Assets/RPG/Sounds/button.mp3
+- Assets/RPG/Sounds/buff.ogg
+- Assets/RPG/Sounds/slash-double.ogg
+- Assets/RPG/Sounds/Skill-OnehandQuick.wav
+- Assets/RPG/Sounds/slash-normal2.wav
+- Assets/RPG/Sounds/heal-all.ogg
+- Assets/RPG/Sounds/slime-hit.ogg
+- Assets/RPG/Sounds/CastSkill.ogg
+Dependencies: []
