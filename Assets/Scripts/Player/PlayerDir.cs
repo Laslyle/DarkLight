@@ -9,6 +9,7 @@ public class PlayerDir : MonoBehaviour
     public Vector3 targetPosition = Vector3.zero;
 
     private bool isMoving = false;
+    public PlayerMov playMov;
 
    
 
@@ -16,6 +17,7 @@ public class PlayerDir : MonoBehaviour
     private void Start()
     {
         targetPosition = transform.position;
+        playMov = this.GetComponent<PlayerMov>();
     }
     void Update()
     {
@@ -37,6 +39,7 @@ public class PlayerDir : MonoBehaviour
         {
             isMoving = false;
         }
+       
 
         if (isMoving)
         {
@@ -46,12 +49,25 @@ public class PlayerDir : MonoBehaviour
             {
                 if (hitinfo.collider.tag == Tags.ground)
                 {
-                    targetPosition = hitinfo.point;
-                    targetPosition = new Vector3(targetPosition.x,transform.position.y,targetPosition.z);
+                    LookAtTarget(hitinfo.point);
                 }
             }
-            this.transform.LookAt(targetPosition);
+
         }
+        else
+        {
+            if (playMov.isMoving)
+                LookAtTarget(targetPosition);
+        }
+
+
+    }
+
+    void LookAtTarget(Vector3 hitPoint)
+    {
+        targetPosition = hitPoint;
+        targetPosition = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
+        this.transform.LookAt(targetPosition);
     }
 
 }

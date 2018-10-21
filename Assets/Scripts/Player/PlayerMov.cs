@@ -11,13 +11,17 @@ public class PlayerMov : MonoBehaviour {
         Idle,
         Moving
     }
-
+    
     private CharacterController controller;
     private PlayerDir playDir;
     public float speed = 2;
     public PlayerState state = PlayerState.Idle;
+    public bool isMoving = false;
 
-   
+
+    /// <summary>
+    /// 获取角色控制器和控制角色方向脚本
+    /// </summary>
     // Use this for initialization
     void Start () {
         playDir = this.GetComponent<PlayerDir>();
@@ -31,8 +35,11 @@ public class PlayerMov : MonoBehaviour {
         {
             controller.SimpleMove(transform.forward * speed);
             state = PlayerState.Moving;
+            isMoving = true;
         }
-        else
+        else { 
             state = PlayerState.Idle;
-	}
+        isMoving = false;}
+
+    }
 }

@@ -9,7 +9,7 @@ public class CursorManage : MonoBehaviour {
     public Texture2D cursor_attack;
     public Texture2D cursor_lockTarget;
     public Texture2D cursor_pick;
-
+   
     private void Start()
     {
         _instance = this;

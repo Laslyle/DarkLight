@@ -8,9 +8,18 @@ public class npcQuest : NPC {
     public GameObject cancelBtn;
     public GameObject acceptBtn;
     public PlayerStatus playerSta;
+    public GameObject Quest;
     public UILabel desLabel;
+    AudioSource audioS;
+
     private bool isQuesting=false;
     public int killCount = 0;
+    private void Awake()
+    {
+        audioS = this.GetComponent<AudioSource>();
+        Quest = GameObject.FindWithTag("Quest");
+        Quest.SetActive(false);
+    }
     private void Start()
     {
         okBtn.SetActive(false);
@@ -20,8 +29,10 @@ public class npcQuest : NPC {
     {
         if (Input.GetMouseButtonDown(0))
         {
+            audioS.Play();
             if (isQuesting)
             {
+                Quest.SetActive(true);
                 acceptBtn.SetActive(false);
                 cancelBtn.SetActive(false);
                 okBtn.SetActive(true);
