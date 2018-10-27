@@ -2,9 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum HeroType{
+    Swordman,
+    Magican
+}
+
 public class PlayerStatus : MonoBehaviour {
+    public HeroType heroType;
+
+    public string name = "默认名称";
     public int hp = 100;
     public int mp = 100;
+
+    public float hp_remain=100;
+    public float mp_remain = 100;
+
     public int coin = 200;
     public int grade = 1;
 

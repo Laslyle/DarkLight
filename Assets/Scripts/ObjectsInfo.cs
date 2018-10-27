@@ -15,10 +15,11 @@ public class ObjectsInfo : MonoBehaviour {
         _instance = this;
         readInfo();
         //print(objectInfoDic.Keys.Count);
-        foreach (int key in objectInfoDic.Keys)
+        /*foreach (int key in objectInfoDic.Keys)
         {
             System.Console.WriteLine("key: {0}  value{1}", key, objectInfoDic[key]); 
-        }
+        }*/
+
     }
 
     public ObjectInfo GetObjectInfoById(int id)
@@ -54,12 +55,57 @@ public class ObjectsInfo : MonoBehaviour {
                     break;
               
             }
+            objectinfo.Type = type;
             if (type == ObjectType.Drug)
             {
                 objectinfo.Hp = int.Parse(proArr[4]);
                 objectinfo.Mp = int.Parse(proArr[5]);
                 objectinfo.Price_sell = int.Parse(proArr[6]);
                 objectinfo.Price_buy = int.Parse(proArr[7]);
+            }
+            else if (type==ObjectType.Equip)
+            {
+                objectinfo.Attack = int.Parse(proArr[4]);
+                objectinfo.Def = int.Parse(proArr[5]);
+                objectinfo.Speed = int.Parse(proArr[6]);
+                objectinfo.Price_buy = int.Parse(proArr[10]);
+                objectinfo.Price_sell = int.Parse(proArr[9]);
+                string str_dressType = proArr[7];
+                switch (str_dressType)
+                {
+                    case "Headgear":
+                        objectinfo.DressType = DressType.Headgear;
+                        break;
+                    case "Armor":
+                        objectinfo.DressType = DressType.Armor;
+                        break;
+                    case "Lefthand":
+                        objectinfo.DressType = DressType.Lefthand;
+                        break;
+                    case "Righthand":
+                        objectinfo.DressType = DressType.Righthand;
+                        break;
+                    case "Shoe":
+                        objectinfo.DressType = DressType.Shoe;
+                        break;
+                    case "Accessory":
+                        objectinfo.DressType = DressType.Accessory;
+                        break;
+
+                }
+                string str_appType=proArr[8];
+                switch (str_appType)
+                {
+                    case "Swordman":
+                        objectinfo.ApplicationType = ApplicationType.Swordman;
+                        break;
+                    case "Magician":
+                        objectinfo.ApplicationType = ApplicationType.Magican;
+                        break;
+                    case "Common":
+                        objectinfo.ApplicationType = ApplicationType.Common;
+                        break;
+                }
             }
             objectInfoDic.Add(objectinfo.Id, objectinfo);
         }
@@ -77,6 +123,23 @@ public enum ObjectType
     Mat
 }
 
+public enum DressType
+{
+    Headgear,
+    Armor,
+    Righthand,
+    Lefthand,
+    Shoe,
+    Accessory
+}
+
+public enum ApplicationType
+{
+    Swordman,
+    Magican,
+    Common
+}
+
 public class ObjectInfo
 {
     
@@ -89,7 +152,13 @@ public class ObjectInfo
     private int price_sell;
     private int price_buy;
 
-    public int Id
+    private int attack;
+    private int def;
+    private int speed;
+    private DressType dressType;
+    private ApplicationType applicationType;
+
+public int Id
     {
         get
         {
@@ -190,6 +259,71 @@ public class ObjectInfo
         set
         {
             price_buy = value;
+        }
+    }
+
+    public int Attack
+    {
+        get
+        {
+            return attack;
+        }
+
+        set
+        {
+            attack = value;
+        }
+    }
+
+    public int Def
+    {
+        get
+        {
+            return def;
+        }
+
+        set
+        {
+            def = value;
+        }
+    }
+
+    public int Speed
+    {
+        get
+        {
+            return speed;
+        }
+
+        set
+        {
+            speed = value;
+        }
+    }
+
+    public DressType DressType
+    {
+        get
+        {
+            return dressType;
+        }
+
+        set
+        {
+            dressType = value;
+        }
+    }
+
+    public ApplicationType ApplicationType
+    {
+        get
+        {
+            return applicationType;
+        }
+
+        set
+        {
+            applicationType = value;
         }
     }
 }

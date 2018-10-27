@@ -5,6 +5,7 @@ using UnityEngine;
 public class itemInventory : UIDragDropItem {
     private UISprite sprite;
     private int id;
+    bool ishover=false;
     // Use this for initialization
     private void Awake()
     {
@@ -19,6 +20,18 @@ public class itemInventory : UIDragDropItem {
 	// Update is called once per frame
 	void Update () {
         base.Update();
+        if (ishover)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                bool success = EquipmentUI._instance.Dress(id);
+                if (success)
+                {
+                    transform.parent.GetComponent<itemGird>().MinusNumber();
+                }
+            }
+        }
+       
     }
     protected override void OnDragDropRelease(GameObject surface)
     {
@@ -84,10 +97,12 @@ public class itemInventory : UIDragDropItem {
   public  void OnHoverOver()
     {
         inventoryDes._instance.Show(id);
+        ishover = true;
     }
   public   void OnHoverExit()
     {
         inventoryDes._instance.Hide();
+        ishover = false;
     }
 
 }

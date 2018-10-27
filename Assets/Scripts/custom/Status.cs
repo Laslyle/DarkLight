@@ -53,8 +53,8 @@ public class Status : MonoBehaviour {
 
         pointRemainLabel.text = ps.point_remain.ToString();
 
-        summaryLabel.text = "伤害：" + (ps.attack + ps.attack_plus)
-            + "  " + "防御：" + (ps.def + ps.def_plus)
+        summaryLabel.text = "  " + "伤害：" + (ps.attack + ps.attack_plus)+"\n"
+            + "  " + "防御：" + (ps.def + ps.def_plus) + "\n"
             + "  " + "速度：" + (ps.speed + ps.speed_plus);
 
         if (ps.point_remain > 0)

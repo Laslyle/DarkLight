@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            GetId(Random.Range(1001,1004));
+            GetId(Random.Range(2001,2023));
         }
 	}
   public  void GetId(int id,int count=1)

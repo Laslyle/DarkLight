@@ -10,11 +10,11 @@ public class functionBar : MonoBehaviour {
     }
     public void equipBtnClick()
     {
-
+        EquipmentUI._instance.transformPlay();
     }
     public void skillBtnClick()
     {
-
+        SkillUI._instance.TransformState();
     }
     public void settingBtnClick()
     {

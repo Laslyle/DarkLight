@@ -44,4 +44,20 @@ public class itemGird : MonoBehaviour {
         this.num += num;
         numLabel.text = this.num.ToString();
     }
+    public bool MinusNumber(int num = 1)
+    {
+        if (this.num >= num)
+        {
+            this.num -= num;
+            numLabel.text = this.num.ToString();
+            if (this.num == 0)
+            {
+                //要清空这个物品格子
+                Clear();//清空存储的信息 
+                GameObject.Destroy(this.GetComponentInChildren<itemInventory>().gameObject);//销毁物品格子
+            }
+            return true;
+        }
+        return false;
+    }
 }
