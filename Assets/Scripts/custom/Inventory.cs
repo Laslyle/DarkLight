@@ -61,6 +61,27 @@ public class Inventory : MonoBehaviour {
             }
         }
     }
+    public bool MinusId(int id,int count=1)
+    {
+        itemGird gird = null;
+        foreach (itemGird temp in itemGirdList)//查找是否有相同物品
+        {
+            if (temp.id == id)
+            {
+                gird = temp;
+                break;
+            }
+        }
+        if (gird == null)
+        {
+            return false;
+        }
+        else
+        {
+            bool isSuccess = gird.MinusNumber(count);
+            return isSuccess;
+        }
+    }
     void Show()
     {
         isShow = true;

@@ -17,6 +17,7 @@ public class SkillUI : MonoBehaviour {
 
         _instance = this;
         tween = this.GetComponent<TweenPosition>();
+        this.transform.position=new Vector3(700,0,0);
     }
     // Use this for initialization
     void Start () {

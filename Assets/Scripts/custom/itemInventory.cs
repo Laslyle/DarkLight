@@ -68,6 +68,12 @@ public class itemInventory : UIDragDropItem {
                 resetPos();
 
             }
+            else if(surface.tag == Tags.shourtCut)
+            {
+                surface.GetComponent<ShortCutGrid>().setDrugById(id);
+                resetPos();
+
+            }
             else
             {
                 resetPos();

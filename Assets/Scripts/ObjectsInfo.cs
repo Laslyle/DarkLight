@@ -65,12 +65,15 @@ public class ObjectsInfo : MonoBehaviour {
             }
             else if (type==ObjectType.Equip)
             {
+              
+
                 objectinfo.Attack = int.Parse(proArr[4]);
                 objectinfo.Def = int.Parse(proArr[5]);
                 objectinfo.Speed = int.Parse(proArr[6]);
                 objectinfo.Price_buy = int.Parse(proArr[10]);
                 objectinfo.Price_sell = int.Parse(proArr[9]);
                 string str_dressType = proArr[7];
+
                 switch (str_dressType)
                 {
                     case "Headgear":
@@ -79,10 +82,10 @@ public class ObjectsInfo : MonoBehaviour {
                     case "Armor":
                         objectinfo.DressType = DressType.Armor;
                         break;
-                    case "Lefthand":
+                    case "LeftHand":
                         objectinfo.DressType = DressType.Lefthand;
                         break;
-                    case "Righthand":
+                    case "RightHand":
                         objectinfo.DressType = DressType.Righthand;
                         break;
                     case "Shoe":

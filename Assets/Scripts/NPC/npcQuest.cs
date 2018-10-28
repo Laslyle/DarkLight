@@ -72,7 +72,7 @@ public class npcQuest : NPC {
     {
         if (killCount >= 10)
         {
-            playerSta.GetCoin(1000);
+            Inventory._instance.GetCoin(1000);
             isQuesting = false;
             killCount = 0;
         }

@@ -32,8 +32,8 @@ public class PlayerStatusUI : MonoBehaviour {
     public void updateShow()
     {
         name.text = "Lv." + ps.grade + " " + ps.name;
-        //hpBar.value = ps.hp_remain / ps.hp;
-        //mpBar.value = ps.mp_remain / ps.mp;
+        hpBar.value = ps.hp_remain / ps.hp;
+        mpBar.value = ps.mp_remain / ps.mp;
         hpLabel.text = ps.hp_remain + "/" + ps.hp;
         mpLabel.text = ps.mp_remain + "/" + ps.mp;
     }

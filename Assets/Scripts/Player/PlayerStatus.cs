@@ -16,8 +16,9 @@ public class PlayerStatus : MonoBehaviour {
 
     public float hp_remain=100;
     public float mp_remain = 100;
+    public float exp = 0;
 
-    public int coin = 200;
+  
     public int grade = 1;
 
     public int attack = 20;
@@ -29,9 +30,9 @@ public class PlayerStatus : MonoBehaviour {
 
     public int point_remain = 0;
 
-    public void GetCoin(int coins)
+    private void Start()
     {
-        coin += coins;
+        GetExp(0);
     }
     public bool GetPoint(int point = 1)
     {
@@ -40,5 +41,31 @@ public class PlayerStatus : MonoBehaviour {
             return true;
         }
         return false;
+    }
+
+ public   void GetDrag(int hp,int mp)
+    {
+        hp_remain += hp;
+        mp_remain += mp;
+        if (hp_remain > this.hp)
+        {
+            hp_remain = this.hp;
+        }
+        if (mp_remain > this.mp)
+        {
+            mp_remain = this.mp;
+        }
+    }
+    public void GetExp(int exp)
+    {
+        this.exp += exp;
+        int total_exp = 100 + this.grade * 30;
+        while (this.exp >= total_exp)
+        {
+            this.grade++;
+            this.exp -= total_exp;
+            total_exp = 100 + this.grade * 30;
+        }
+        expBar._instance.setValue(this.exp);
     }
 }

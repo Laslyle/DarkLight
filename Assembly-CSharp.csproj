@@ -212,10 +212,13 @@
     <Compile Include="Assets\Scripts\custom\itemInventory.cs" />
     <Compile Include="Assets\Scripts\custom\Status.cs" />
     <Compile Include="Assets\Scripts\custom\Tags.cs" />
+    <Compile Include="Assets\Scripts\enemy\wolfBaby.cs" />
+    <Compile Include="Assets\Scripts\expBar.cs" />
     <Compile Include="Assets\Scripts\MovieCamera.cs" />
     <Compile Include="Assets\Scripts\NPC\NPC.cs" />
     <Compile Include="Assets\Scripts\NPC\npcDrug.cs" />
     <Compile Include="Assets\Scripts\NPC\npcQuest.cs" />
+    <Compile Include="Assets\Scripts\NPC\npcWeapon.cs" />
     <Compile Include="Assets\Scripts\ObjectsInfo.cs" />
     <Compile Include="Assets\Scripts\Player\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimation.cs" />
@@ -231,8 +234,11 @@
     <Compile Include="Assets\Scripts\UI\EquipmentUI.cs" />
     <Compile Include="Assets\Scripts\UI\functionBar.cs" />
     <Compile Include="Assets\Scripts\UI\itemEquipment.cs" />
+    <Compile Include="Assets\Scripts\UI\itemShopWeapon.cs" />
+    <Compile Include="Assets\Scripts\UI\miniMap.cs" />
     <Compile Include="Assets\Scripts\UI\PlayerStatusUI.cs" />
     <Compile Include="Assets\Scripts\UI\ShopDrug.cs" />
+    <Compile Include="Assets\Scripts\UI\ShopWeaponUI.cs" />
     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
     <None Include="Assets\NGUI\ReadMe - 3.12.0.txt" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
