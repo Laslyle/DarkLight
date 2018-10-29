@@ -22,4 +22,13 @@ public class CursorManage : MonoBehaviour {
     {
         Cursor.SetCursor(cursor_npc_talk, Vector2.zero, CursorMode.Auto);
     }
+    public void SetAttack()
+    {
+        Cursor.SetCursor(cursor_attack, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void SetLockTarget()
+    {
+        Cursor.SetCursor(cursor_lockTarget, Vector2.zero, CursorMode.Auto);
+    }
 }

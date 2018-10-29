@@ -59,6 +59,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\HUD Text\Scripts\HUDText.cs" />
+    <Compile Include="Assets\HUD Text\Scripts\UIFollowTarget.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -213,7 +215,9 @@
     <Compile Include="Assets\Scripts\custom\Status.cs" />
     <Compile Include="Assets\Scripts\custom\Tags.cs" />
     <Compile Include="Assets\Scripts\enemy\wolfBaby.cs" />
+    <Compile Include="Assets\Scripts\enemy\wolfSpawn.cs" />
     <Compile Include="Assets\Scripts\expBar.cs" />
+    <Compile Include="Assets\Scripts\MagicSphere.cs" />
     <Compile Include="Assets\Scripts\MovieCamera.cs" />
     <Compile Include="Assets\Scripts\NPC\NPC.cs" />
     <Compile Include="Assets\Scripts\NPC\npcDrug.cs" />
@@ -222,6 +226,7 @@
     <Compile Include="Assets\Scripts\ObjectsInfo.cs" />
     <Compile Include="Assets\Scripts\Player\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimation.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDir.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMov.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStatus.cs" />
@@ -233,6 +238,7 @@
     <Compile Include="Assets\Scripts\Skill\SkillUI.cs" />
     <Compile Include="Assets\Scripts\UI\EquipmentUI.cs" />
     <Compile Include="Assets\Scripts\UI\functionBar.cs" />
+    <Compile Include="Assets\Scripts\UI\HUDtextParent.cs" />
     <Compile Include="Assets\Scripts\UI\itemEquipment.cs" />
     <Compile Include="Assets\Scripts\UI\itemShopWeapon.cs" />
     <Compile Include="Assets\Scripts\UI\miniMap.cs" />
@@ -273,6 +279,7 @@
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+    <None Include="Assets\HUD Text\ReadMe - 1.11.txt" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />

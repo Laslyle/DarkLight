@@ -108,6 +108,12 @@ public class Inventory : MonoBehaviour {
         }
         return false;
     }
+
+    public void AddCoin(int count)
+    {
+        this.coinCount += count;
+        coinLabel.text = coinCount.ToString();
+    }
    public void transformStatu()
     {
         if (isShow == false)

@@ -10,7 +10,7 @@ public class PlayerDir : MonoBehaviour
 
     private bool isMoving = false;
     public PlayerMov playMov;
-
+    public PlayerAttack attack;
    
 
     // Update is called once per frame
@@ -18,10 +18,12 @@ public class PlayerDir : MonoBehaviour
     {
         targetPosition = transform.position;
         playMov = this.GetComponent<PlayerMov>();
+        attack = this.GetComponent<PlayerAttack>();
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (attack.playerSta == PlayerState.Death) return;
+        if ((attack.isLocking==false)&&Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitinfo;

@@ -9,6 +9,7 @@ public enum HeroType{
 
 public class PlayerStatus : MonoBehaviour {
     public HeroType heroType;
+    public UILabel LV;
 
     public string name = "默认名称";
     public int hp = 100;
@@ -18,14 +19,14 @@ public class PlayerStatus : MonoBehaviour {
     public float mp_remain = 100;
     public float exp = 0;
 
-  
+    public GameObject prefab;
     public int grade = 1;
 
-    public int attack = 20;
+    public float attack = 20;
     public int attack_plus = 0;
-    public int def = 20;
+    public float def = 20;
     public int def_plus = 0;
-    public int speed = 0;
+    public float speed = 0;
     public int speed_plus = 0;
 
     public int point_remain = 0;
@@ -55,6 +56,8 @@ public class PlayerStatus : MonoBehaviour {
         {
             mp_remain = this.mp;
         }
+        PlayerStatusUI._instance.updateShow();
+
     }
     public void GetExp(int exp)
     {
@@ -63,9 +66,32 @@ public class PlayerStatus : MonoBehaviour {
         while (this.exp >= total_exp)
         {
             this.grade++;
+             prefab = null;
+            GameObject.Instantiate(prefab, transform.position, Quaternion.identity);
             this.exp -= total_exp;
             total_exp = 100 + this.grade * 30;
+            updateShow();
         }
-        expBar._instance.setValue(this.exp);
+        expBar._instance.setValue(this.exp/ total_exp);
+    }
+
+    public bool TakeMp(int count)
+    {
+        if (mp_remain > count)
+        {
+
+            mp_remain -= count;
+            PlayerStatusUI._instance.updateShow();
+            return true;
+
+        }
+        else
+        {
+            return false;
+        }
+    }
+    void updateShow()
+    {
+        LV.text = "LV." + grade+name;
     }
 }

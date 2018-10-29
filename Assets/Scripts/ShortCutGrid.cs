@@ -16,6 +16,7 @@ public class ShortCutGrid : MonoBehaviour {
     private SkillInfo info;
     private ObjectInfo objectInfo;
     private PlayerStatus ps;
+    private PlayerAttack pa;
     private void Awake()
     {
 
@@ -25,11 +26,12 @@ public class ShortCutGrid : MonoBehaviour {
     // Use this for initialization
     void Start () {
         ps = GameObject.FindWithTag(Tags.player).GetComponent<PlayerStatus>();
+        pa = GameObject.FindWithTag(Tags.player).GetComponent<PlayerAttack>();
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         if (Input.GetKeyDown(keycode))
         {
             if (type == ShortCutType.Drug)
@@ -38,7 +40,16 @@ public class ShortCutGrid : MonoBehaviour {
             }
             else if(type == ShortCutType.Skill)
             {
-
+                //释放技能
+                bool success = ps.TakeMp(info.Mp);
+                if (success)
+                {
+                    pa.UseSkill(info);
+                }
+                else
+                {
+                    Debug.Log("没蓝");
+                }
             }
 
         }

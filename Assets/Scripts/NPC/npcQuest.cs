@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class npcQuest : NPC {
+    public static npcQuest _instance;
     public TweenPosition tw;
     public GameObject okBtn;
     public GameObject cancelBtn;
@@ -16,6 +17,7 @@ public class npcQuest : NPC {
     public int killCount = 0;
     private void Awake()
     {
+        _instance = this;
         audioS = this.GetComponent<AudioSource>();
         Quest = GameObject.FindWithTag("Quest");
         Quest.SetActive(false);
@@ -72,7 +74,7 @@ public class npcQuest : NPC {
     {
         if (killCount >= 10)
         {
-            Inventory._instance.GetCoin(1000);
+            Inventory._instance.AddCoin(1000);
             isQuesting = false;
             killCount = 0;
         }
@@ -83,5 +85,13 @@ public class npcQuest : NPC {
     void hideQuest()
     {
         tw.PlayReverse();
+    }
+
+    public void OnKillWolf()
+    {
+        if (isQuesting)
+        {
+            killCount++;
+        }
     }
 }
